@@ -19,7 +19,7 @@ def notas(nota1,nota2,nota3):
 
 #  esta es la ruta edad 
 
-@app.route('/edad/<int:a>')
+@app.route('/edad.html/<int:a>')
 def edad(a):
     tituloEdad = 'Ingresa la edad en la url de esta forma: /edad/#'
     if a < 18:
@@ -36,4 +36,3 @@ if __name__ == '__main__':
 
 
 
-    
