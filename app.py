@@ -55,13 +55,16 @@ def edad(a):
 @app.route('/arreglos.html/<int:valores>/<int:columnas>/<int:filas>')
 def arreglos(valores, columnas, filas):
     tituloArreglos = 'Ingresa los datos para el arreglo en la url de esta forma: /(valores)/(columnas)/(filas)'
-    
-    if filas == 0:
+    if valores == 0:
+        resultado = 'Se necesita un rango establecido para los array'
+    elif filas == 0:
         arreglo = np.random.randint(valores, size=columnas)
+        resultado = f'El arreglo random es: {arreglo}'
     else:
         arreglo = np.random.randint(valores, size=(filas, columnas))
+        resultado = f'El arreglo random es: {arreglo}'
 
-    resultado = f'El arreglo random es: {arreglo}'
+    
 
     return render_template('arreglos.html', resultado=resultado, tituloEdad=tituloArreglos)
 
