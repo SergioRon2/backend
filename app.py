@@ -1,4 +1,4 @@
-from flask import Flask, render_template, url_for
+from flask import Flask, render_template, url_for, request
 import numpy as np
 
 app = Flask(__name__)
@@ -16,7 +16,7 @@ def ruta1():
 @app.route('/notas.html')
 @app.route('/notas.html/<float:nota1>/<float:nota2>/<float:nota3>')
 def notas(nota1,nota2,nota3):
-    tituloNotas = 'Ingresa las notas en la url de esta forma: /notas/(nota1)/(nota2)/(nota3)'
+    tituloNotas = 'Ingresa las notas en la url de esta forma: /notas.html/(nota1)/(nota2)/(nota3)'
 
     proceso = (nota1*30)/100 + (nota2*30)/100 + (nota3*40)/100
     resultado = f'el promedio es: {proceso}'
@@ -27,7 +27,7 @@ def notas(nota1,nota2,nota3):
 
 @app.route('/edad.html/<int:a>')
 def edad(a):
-    tituloEdad = 'Ingresa la edad en la url de esta forma: /edad/#'
+    tituloEdad = 'Ingresa la edad en la URL de esta forma: /edad.html/(edad)'
     resultado = ''
 
     # todo lo que esta comentado es el intento de introducir imagenes
@@ -54,7 +54,7 @@ def edad(a):
 
 @app.route('/arreglos.html/<int:valores>/<int:columnas>/<int:filas>')
 def arreglos(valores, columnas, filas):
-    tituloArreglos = 'Ingresa los datos para el arreglo en la url de esta forma: /(valores)/(columnas)/(filas)'
+    tituloArreglos = 'Ingresa los datos para el arreglo en la url de esta forma: arreglos.html/(valores)/(columnas)/(filas)'
     if valores == 0:
         resultado = 'Se necesita un rango establecido para los array'
     elif filas == 0:
@@ -63,8 +63,6 @@ def arreglos(valores, columnas, filas):
     else:
         arreglo = np.random.randint(valores, size=(filas, columnas))
         resultado = f'El arreglo random es: {arreglo}'
-
-    
 
     return render_template('arreglos.html', resultado=resultado, tituloEdad=tituloArreglos)
 
