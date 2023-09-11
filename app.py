@@ -34,7 +34,6 @@ def edad(a):
 
     if a == 0:
         resultado = ''
-        # foto = ''
     elif a < 18:
         resultado = f'La persona es menor de edad, tiene {a} años'
         # foto = url_for('static', filename='static/img/menores.jpg')

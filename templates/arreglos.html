@@ -7,21 +7,18 @@
     <link rel="stylesheet" href="../static/style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
 </head>
-<body class="overflow-x-hidden">
+<body class="overflow-x-hidden bg-dark">
   <nav class="navbar navbar-expand-lg bg-danger sticky-top">
     <div class="container-fluid">
       <a class="navbar-brand text-white mx-3" href="/template.html">Actividad</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
     </div>
   </nav>
     <div class="row">
-        <h1 class="col text-center mt-5">{{ tituloArreglos }}</h1>
+        <h1 class="col text-center text-light mt-5">{{ tituloArreglos }}</h1>
     </div>
     <div class="row justify-content-center mt-5 p-5 gap-5">
-      <div class="card p-5 mt-5" style="width: 38rem;">
-        <h3 class="col text-center"> {{ resultado }} </h3>
+      <div class="card p-5 mt-5 bg-dark border-light" style="width: 38rem;">
+        <h3 class="col text-center text-light"> {{ resultado }} </h3>
       </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
